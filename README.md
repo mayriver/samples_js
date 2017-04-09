@@ -314,5 +314,193 @@ else{
 </body>
 </html>
 ---
+18_index_method_this
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <title>JavaScript :D</title> 
+</head>
+<body>
+    <script>
+        /*
+            オブジェクト
+                名前と値
+        */
+        var user = {
+            email: "taguchi@gmail.com", // プロパティ
+            score: 80,
+            greet: function(name) { // メソッド
+                console.log("hello, " + name + " from " + this.email);
+            }
+        };
+        //console.log(user["email"]);
+        //console.log(user.email);
+        //user.score = 100;
+        //console.log(user);
+        user.greet("Tom");
+
+
+    </script>
+</body>
+</html>
+---
+19_index_string
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <title>JavaScript :D</title> 
+</head>
+<body>
+     <script>
+        /*
+            組み込みオブジェクト
+
+            - String
+            - Array
+            - Math
+            - Date
+        */
+        // var s = new String("taguchi");
+        var s = "taguchi"; // 文字列リテラル
+        console.log(s.length);
+        console.log(s.replace("t", "T"));
+        console.log(s.substr(1, 3));
+
+
+    </script>
+</body>
+</html>
+---
+22_index_dom6
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+   <meta charset="UTF-8">
+   <title>JavaScript :D</title> 
+</head>
+<body>
+    <h1>見出し</h1>
+    <p id="msg">こんにちは！</p>
+   <script>
+   /*
+   ブラウザを扱うためのwindowオブジェクト、それからDOMについても。
+    windowオブジェクト
+    DOM
+
+        // console.dir(window);
+        // console.log(window.outerHeight);
+        // window.location.href = 'http://dotinstall.com';
+
+        // document - 今開いているページ
+
+        // document object model (DOM)
+
+
+
+   */
+
+   </script>
+</body>
+</html>
+---
+23_index_dom
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScriptの練習</title>
+    <style>
+        .myStyle {
+            font-weight: bold;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>見出し</h1>
+    <p id="msg">こんにちは！</p>
+    <script>
+
+    /*
+    DOMを使ってページ内の要素を操作してみます。
+        document.getElementById
+    createElement
+    createTextNode
+    appendChild
+    */
+
+        var e = document.getElementById('msg');
+        e.textContent = 'hello!';
+        e.style.color = 'red';
+        e.className = 'myStyle';
+
+        /*
+            body
+                p
+                    text
+        */
+        var greet = document.createElement('p'),
+            text = document.createTextNode('hello world');
+        document.body.appendChild(greet).appendChild(text);
+
+    </script>
+</body>
+</html>
+---
+24_index_event
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScriptの練習</title>
+    <style>
+        .myStyle {
+            font-weight: bold;
+            border: 1px solid gray;
+        }
+    </style>
+</head>
+<body>
+    <h1>見出し</h1>
+    <p id="msg">こんにちは！</p>
+    <button id="add">Click!</button>
+    <script>
+
+/*
+
+ページ内の要素にクリックイベントを設定する方法について見ていきます。
+addEventListener
+
+*/
+
+        var e = document.getElementById('msg');
+        e.textContent = 'hello!';
+        e.style.color = 'red';
+        e.className = 'myStyle';
+
+        /*
+            body
+                p
+                    text
+        */
+
+        document.getElementById('add').addEventListener('click', function() {
+            var greet = document.createElement('p'),
+                text = document.createTextNode('hello world');
+            document.body.appendChild(greet).appendChild(text);
+        });
+
+    </script>
+</body>
+</html>
+---
+
 
 
